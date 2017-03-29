@@ -93,6 +93,7 @@ def stocGradAscent1(dataMatrix, classLabels, numIter=150):
 
 
 def classifyVector(inX, weights):
+    """以回归系数和特征向量作为输入来计算对应的Sigmoid值，如果Sigmoid值大于0.5函数返回1,否则返回0"""
     prob = sigmoid(sum(inX*weights))
     if prob > 0.5:
         return 1.0
@@ -101,6 +102,7 @@ def classifyVector(inX, weights):
 
 
 def colicTest():
+    """打开训练集和测试集，对数据格式化处理"""
     frTrain = open('horseColicTraining.txt')
     frTest = open('horseColicTest.txt')
     trainingSet = []
@@ -108,6 +110,7 @@ def colicTest():
     for line in frTrain.readlines():
         currLine = line.strip().split('\t')
         lineArr = []
+        # 20个特征
         for i in range(21):
             lineArr.append(float(currLine[i]))
         trainingSet.append(lineArr)
@@ -122,7 +125,7 @@ def colicTest():
         for i in range(21):
             lineArr.append(float(currLine[i]))
         if int(classifyVector(array(lineArr), trainWeights)) != int(currLine[21]):
-            errorCount += 1
+            errorCount += 1  # 错误计数
     errorRate = (float(errorCount)/numTestVec)
     print "the error rate of this test is: %f" % errorRate
     return errorRate
@@ -137,4 +140,4 @@ def multiTest():
 
 
 if __name__ == "__main__":
-    pass
+    multiTest()
