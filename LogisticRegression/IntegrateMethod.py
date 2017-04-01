@@ -1,5 +1,5 @@
 # coding:utf8
-# Successive approximation method
+# Successive approximation method 逐次下降法
 import numpy as np
 from numpy import *
 import matplotlib.pyplot as plt
