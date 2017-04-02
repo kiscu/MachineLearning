@@ -1,0 +1,16 @@
+Installing Octave on GNU/Linux
+Installing Octave on GNU/Linux
+
+We recommend using your system package manager to install Octave.
+
+On Ubuntu, you can use:
+
+    sudo apt-get update && sudo apt-get install octave
+
+On Fedora, you can use:
+
+    sudo yum install octave-forge
+
+Please consult the Octave maintainer’s instructions for other GNU/Linux systems.
+
+"Warning: Do not install Octave 4.0.0"; checkout the "Resources" menu's section of "Installation Issues".
